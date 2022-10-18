@@ -1,0 +1,28 @@
+<script>
+    __x=0;
+    __y=0;
+    __mode="";
+</script>
+
+<!--Visible when x and mode-->
+<div visible="__x&&__mode" id="__screen2">{{__x}} {{__mode}} {{__y>0?__y:""}}</div>
+
+<input value="0" id="__screen" type="number">
+
+<style>
+    #__screen,#__screen2{
+        width: 40vh;
+        padding: 2vh;
+        background-color: rgb(0, 126, 73);
+        color:rgb(112, 255, 184);
+        font-family: 'Silkscreen', cursive;
+        font-size: 5vh;
+        border: 2px;
+    }
+    #__screen2{
+        overflow: hidden;
+        font-size: 4vh;
+        color:rgb(182, 255, 231);
+    }
+
+</style>

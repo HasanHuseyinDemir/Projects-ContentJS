@@ -1,0 +1,115 @@
+<script>
+    __screenControls=(mode)=>{
+        __mode=mode;
+        
+        if(__x==0){
+            __x=parseInt(__screen.value);
+        }else{
+            if(__y==0){
+                __y=parseInt(__screen.value);
+            }else{
+                switch(mode){
+                case "<sup>POW</sup>":__x=Math.pow(__x,__y);break;
+                case "%":__x=__x%__y;break;
+                case "/;":__x=__x/__y;break;
+                case "*":__x=__x*__y;break;
+                case "-":__x=__x-__y;break;
+                case "+":__x=__x+__y;break;
+                }
+               __y=0;
+            }
+        }
+        __screen.value=0;
+        mode=="AC"?(__x=0,__y=0,__mode="",__screen.value=0):"";
+        set();
+    }
+    __equals=()=>{
+        if(__mode&&__x&&__y){
+            if(__mode!="<sup>POW</sup>"){
+                __x=eval(`parseInt(__x)${__mode}parseInt(__y)`);
+            }else{
+                __x=Math.pow(__x,__y);
+            }
+
+            __y=0;
+        }else if(__mode&&__x&&__screen.value){
+            if(__mode!="<sup>POW</sup>"){
+            __x=eval(`parseInt(__x)${__mode}parseInt(__screen.value)`);
+            }else{
+                __x=Math.pow(__x,__screen.value);
+            }
+        }
+        __screen.value=0
+        set();
+    }
+    __screenAdd=(num)=>{
+        if(__x&&__y&&__mode){
+            __equals();
+        }
+        __screen.value=__screen.value+num;
+        if(__screen.value>0&&__screen.value.charAt(0)==0){
+            __screen.value=__screen.value.slice(1);
+        }   
+    }
+</script>
+
+<div id="__calcTable">
+
+    <div onclick="__screenControls('<sup>POW</sup>')"><div>x<sup>y</sup></div></div>
+    <div onclick="__screenControls('%')">%</div>
+    <div onclick="__screen.value=__screen.value.slice(0,-1)">&#9249; </div>
+    <div onclick="__screenControls('AC')">AC</div>
+
+    <!--TopRow-->
+    <div onclick="__screenAdd(9)">9</div>
+    <div onclick="__screenAdd(8)">8</div>
+    <div onclick="__screenAdd(7)">7</div>
+    <div onclick="__screenControls('/')">&divide;</div>
+
+    <!--MidRow-->
+    <div onclick="__screenAdd(6)">6</div>
+    <div onclick="__screenAdd(5)">5</div>
+    <div onclick="__screenAdd(4)">4</div>
+    <div onclick="__screenControls('*')">&times;</div>
+
+    <!--BottomRow-->
+    <div onclick="__screenAdd(3)">3</div>
+    <div onclick="__screenAdd(2)">2</div>
+    <div onclick="__screenAdd(1)">1</div>
+    <div onclick="__screenControls('-')">&minus;</div>
+
+    <!--Footer-->
+    <div onclick="__screenAdd(0)">0</div>
+    <div onclick="__screenAdd('.')">.</div>
+    <div onclick="__equals()">&equals;</div>
+    <div onclick="__screenControls('+')">&plus;</div>
+
+</div>
+
+<style>
+    #__calcTable{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+    #__calcTable>div{
+        transition: ease-in 0.2s;
+        width: 10vh;
+        height: 10vh;
+        font-size: 4vh;
+        background-color:rgb(31, 31, 31);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:white;
+        border-color: black;
+        cursor:pointer;
+        user-select: none;
+        border: solid 2px;
+        border-radius: 7px;
+    }
+    #__calcTable>div:hover{
+        background-color: rgb(21, 255, 0);
+    }
+</style>

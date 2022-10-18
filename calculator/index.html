@@ -1,0 +1,34 @@
+{%activeApp="Hesap Makinesi",document.title="Hesap Makinesi";""%}
+<script>
+//use __ for private variables
+//{ % script % } is used to run every time the page loads
+//The #key attribute moves the required keyword for nested pages to the child page.
+</script>
+
+{%cRender("./calculator/screen.html","Screen","#key"),""%}
+{%cRender("./calculator/buttons.html","Buttons","#key"),""%}
+
+<div id="__calc">
+    <Screen/>
+    <Buttons/>
+</div>
+
+<style>
+    #__calc{
+        display: flex;
+        width: 50vh;
+        padding: 3%;
+        flex-direction: column;
+        background-color: rgba(27, 27, 27, 0.39);
+        align-items: center;
+        border: black solid 1px;
+        border-radius: 7px;
+        row-gap:2vh;
+        box-shadow: 3px 3px 5px gray;
+
+    }
+    #__calc>*{
+        margin: 1%;
+    }
+    
+</style>
