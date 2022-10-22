@@ -5,19 +5,22 @@
 <h1 align="center">{{activeApp?activeApp+" Uygulaması":"Aktif Bir Uygulama Yok"}}</h1>
 
 <div id="page"></div>
-{%cRender("./calculator/index.html","#page","calculator"),""%}
+{%cRender("./todolist/index.html","#page","todo"),""%}
 
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&family=Roboto:wght@100;300;400;500;700;900&family=Silkscreen&display=swap');
     body{
         font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
     }
     #page{
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 2vh;
     }
+    *{
+        margin:0;
+    }
+    
 </style>
