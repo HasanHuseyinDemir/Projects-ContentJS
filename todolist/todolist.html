@@ -1,13 +1,17 @@
-<h2>Yapılacaklar Listesi (0)</h2>
+<h2>Yapılacaklar Listesi {{__list[0]?`(${__list.length})`:""}}</h2>
 <br>
 <hr>
 <br>
-{{__list[0]?"Liste Dolu":"Liste Boş!",""}}
+
+<script>
+    __SeeExamples=false;
+</script>
 
 <div id="__todoitems">
 
-    <Example/>
-    
+    <Example visible="__SeeExamples"/>
+    {{__listUpdate.getList()}}
+
 </div>
 
 {%cRender("./todolist/example.html","example","#key"),""%}

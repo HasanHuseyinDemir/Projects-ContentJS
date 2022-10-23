@@ -41,31 +41,7 @@
 
 <script>
 
-    __listUpdate =  {
-        get:()=>{
-            let title = document.querySelector("#__title");
-            let details = document.querySelector("#__details");
-            let importance = document.querySelector("#__importances");
-            let titleValue = title.value;
-            let detailsValue = details.value;
-            let importanceValue = importance.value;
-            __listUpdate.add(titleValue,detailsValue,importanceValue);
-            __listUpdate.clear(title,details,importance);
-        },
-        add:(titleValue,detailsValue,importanceValue)=>{
-            if (titleValue) {
-            let item = { key: Math.floor(Math.random() * 1000000), title: titleValue, details: detailsValue, importance: importanceValue };
-            __list.push(item);
-            } else {
-            alert("Başlık Girmelisiniz!");
-            }
-        },
-        clear:(title,details,importance)=>{
-            title.value = "";
-            details.value = "";
-            importance.value = 0;
-        }
-    }
+
 
 </script>
 
