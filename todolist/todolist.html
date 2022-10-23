@@ -6,63 +6,11 @@
 
 <div id="__todoitems">
 
-    <div id="__importance0">
-        <input type="checkbox" class="__checkbox">
-        <div>
-            <h3>Selamlar</h3>
-            <p>Merhabalar bu bir görev parçasıdır</p>
-        </div>
-    </div>
-
-    <div id="__importance1">
-        <input type="checkbox" class="__checkbox">
-        <div>
-            <h3>Selamlar</h3>
-            <p>Merhabalar bu bir görev parçasıdır</p>
-        </div>
-    </div>
-
-    <div id="__importance2">
-        <input type="checkbox" class="__checkbox">
-        <div>
-            <h3>Selamlar</h3>
-            <p>Orta Zorluk Görev</p>
-        </div>
-    </div>
-
-    <div id="__importance3">
-        <input type="checkbox" class="__checkbox">
-        <div>
-            <h3>Selamlar</h3>
-            <p>Orta Zorluk Görev</p>
-        </div>
-    </div>
-
-    <div id="__importance4">
-        <input type="checkbox" class="__checkbox">
-        <div>
-            <h3>Selamlar</h3>
-            <p>Orta Zorluk Görev</p>
-        </div>
-    </div>
-
-    <div id="__importance5">
-        <input type="checkbox" class="__checkbox">
-        <div>
-            <h3>Selamlar</h3>
-            <p>Orta Zorluk Görev</p>
-        </div>
-    </div>
-
-    <div id="__importance6">
-        <input type="checkbox" class="__checkbox">
-        <div>
-            <h3>Selamlar</h3>
-            <p>Orta Zorluk Görev</p>
-        </div>
-    </div>
-
+    <Example/>
+    
 </div>
+
+{%cRender("./todolist/example.html","example","#key"),""%}
 
 <style>
     .__checkbox {
@@ -74,16 +22,6 @@
         overflow-y: auto;
     }
 
-    #__todoitems>* {
-        display: flex;
-        flex-direction: row;
-        border-color: black;
-        background-color: rgba(255, 255, 255, 0.568);
-        border: 1px solid;
-        margin-top: 10px;
-        align-items: center;
-    }
-
     #__importance0,
     #__importance1,
     #__importance2,
@@ -91,6 +29,11 @@
     #__importance4,
     #__importance5,
     #__importance6 {
+        border-color: black;
+        background-color: rgba(255, 255, 255, 0.568);
+        border: 1px solid;
+        margin-top: 10px;
+        align-items: center;
         display: grid;
         grid-template-columns: 10% 90%;
         padding: 1vh;
@@ -109,18 +52,19 @@
     }
 
     #__importance3 {
-        color: rgb(51, 0, 145)
+        color: rgb(51, 0, 145);
     }
 
     #__importance4 {
         color: rgb(52, 0, 95);
         font-weight: bold;
+        border: dashed 1px;
     }
 
     #__importance5 {
         color: orangered;
         font-weight: bold;
-        border: dashed 1px
+        border: dashed 1px;
     }
 
     #__importance6 {

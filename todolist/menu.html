@@ -7,21 +7,21 @@
 
     <div>
         <p>Başlık</p>
-        <input>
+        <input id="__title">
     </div>
 
     <br>
 
     <div>
         <p>Detaylar</p>
-        <textarea></textarea>
+        <textarea id="__details"></textarea>
     </div>
 
     <br>
 
     <div>
         <p>Önem Sırası</p>
-        <select>
+        <select id="__importances">
             <option value="0">#0 | Önemsiz</option>
             <option value="1" style='color:green'>#1 | Az Önemli</option>
             <option value="2" style='color:blue'>#2 | Önemli</option>
@@ -34,11 +34,27 @@
 
     <br>
     <div>
-        <button>Ekle</button>
+        <button onclick="__addToList()">Ekle</button>
     </div>
 
 </div>
 
+<script>
+    __addToList=()=>{
+        let title=document.querySelector("#__title");
+        let details=document.querySelector("#__details");
+        let importance=document.querySelector("#__importances");
+        let titleValue=title.value;
+        let detailsValue=details.value;
+        let importanceValue=importance.value;
+        __clear(title,details,importance);
+    }
+    __clear=(title,details,importance)=>{
+            title.value="";
+            details.value="";
+            importance.value=0;
+    };
+</script>
 
 <style>
     menu {
