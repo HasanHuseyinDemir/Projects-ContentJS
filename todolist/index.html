@@ -4,7 +4,10 @@
 
     //list
     __list=[];
-
+    __filter="all";
+    __getIncompleted=()=>{
+        return __list.length-__listUpdate.getCompleted();
+    }
     __listUpdate = {
         get: () => {
             let title = document.querySelector("#__title");
@@ -52,7 +55,6 @@
             __list.map((objs)=>{
                 if(objs.key.toString()==key.toString()){
                     objs.completed=!objs.completed;
-                    console.log(objs);
                 }
             })
             set();
@@ -65,11 +67,22 @@
             return completed;
         },
         filter:{
-            get:()=>{
-
+            get:(condition)=>{
+                let list = __list;
+                switch(condition){
+                    case "impAscend":__listUpdate.filter.importanceAscend(list);break;
+                    case "impDescend":__listUpdate.filter.importanceAscend();break;
+                    case "completed":__listUpdate.filter.importanceAscend();break;
+                    case "incompleted":__listUpdate.filter.importanceAscend();break;
+                }
             },
-            importanceAscend:()=>{
-                
+            importanceAscend:(list)=>{
+                let Arr0=[];
+                list.map((item)=>{
+                    if(item.importance==0){
+                        Arr.push(item);
+                    }
+                })
             },
             importanceDescend:()=>{
 
@@ -86,13 +99,19 @@
 
 </script>
 
+    <div id="__row">
+    
     <div id="__grid">
     <Menu/>
     <TodoList/>
     </div>
+    <Footer/>
+
+    </div>
 
     {%cRender("./todolist/menu.html","menu","#key"),""%}
     {%cRender("./todolist/todolist.html","todolist","#key"),""%}
+    {%cRender("./todolist/footer.html","footer","#key"),""%}
 
 
 <style>
@@ -102,7 +121,6 @@
         width: 70vw;
         height: 70vh;
         overflow-y: auto;
-
         padding: 3vh;
         display: grid;
         grid-template-columns: 40% 60%;
@@ -110,6 +128,10 @@
     #__grid>*{  
         height: 90%;
         word-wrap: break-word;
+    }
+    #__row{
+        display:flex;
+        flex-direction: column;
     }
     /**/
     menu,todolist{

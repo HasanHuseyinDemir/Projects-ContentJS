@@ -1,0 +1,53 @@
+<div id="__footerFlex">
+    <div>
+    <p>Sıralama</p>
+    <select onchange="__filter=value,set()">
+        <option value="all">Tümü</option>
+        <option value='important'>Önemliler</option>
+        <option value='notImportant'>Önemsizler</option>
+        <option value='completed'>Tamamlananlar</option>
+        <option value='incompleted'>Tamanlanmayanlar</option>
+    </select>
+    </div>
+    
+    <hr visible="__list[0]">
+
+    <div id="__analysis">
+        
+        <p visible="__list[0]">Analiz</p>
+        <div visible="__list[0]" id="__analysisIcons">
+            <span>{{`&#9634; ${__list.length}`}}</span>  
+            <span>{{`&check; ${__listUpdate.getCompleted()}`}}</span> 
+            <span>{{`&#10006; ${__getIncompleted()}`}}</span>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    Footer{
+        background-color: rgb(185, 185, 185);
+        padding:1vh;
+        border:solid;
+        border-top:none;
+    }
+    Footer>div{
+        display: flex;
+        justify-content: center;
+    }
+
+    #__footerFlex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #__footerFlex>*{
+        margin:10px;
+    }
+    #__analysis{
+        display: flex;
+        flex-direction: column;
+    }
+
+</style>
