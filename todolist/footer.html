@@ -1,12 +1,13 @@
 <div id="__footerFlex">
     <div>
     <p>Sıralama</p>
-    <select onchange="__filter=value,set()">
+    <select onchange="__filter=value,__listUpdate.filter.get(__filter),set()">
         <option value="all">Tümü</option>
-        <option value='important'>Önemliler</option>
-        <option value='notImportant'>Önemsizler</option>
-        <option value='completed'>Tamamlananlar</option>
-        <option value='incompleted'>Tamanlanmayanlar</option>
+        <option value='important'>Sıra-Önce Önem</option>
+        <option value='notImportant'>Sıra-Önce Önemsiz</option>
+        <option value="urgent">Filtre-Aciller</option>
+        <option value='completed'>Filtre-Tamamlananlar</option>
+        <option value='incompleted'>Filtre-Tamanlanmayanlar</option>
     </select>
     </div>
     

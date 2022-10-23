@@ -1,10 +1,9 @@
 {%activeApp="Yapılacaklar Listesi",document.title="Yapılacaklar Listesi";""%}
 
 <script>
-
-    //list
     __list=[];
     __filter="all";
+    __filtered=[];
     __getIncompleted=()=>{
         return __list.length-__listUpdate.getCompleted();
     }
@@ -50,6 +49,20 @@
             return `Liste Boş`
         }
         },
+        getFiltered:()=>{
+            if(__filter){
+                return __filtered.map((item) => {
+                return (`
+                <div id="__importance${item.importance}">
+                <input type="checkbox" class="__checkbox" onclick="__listUpdate.checked(${item.key})" ${item.completed?"checked":""}>
+                <div>
+                <h3 class="${item.completed?'__checkedItem':''}">${item.title}</h3>
+                <p class="${item.completed?'__checkedItem':''}">${item.details}</p>
+                </div>
+                </div>
+                `)
+            }).join("");
+        }},
         checked:(key)=>{
             let keys=key;
             __list.map((objs)=>{
@@ -70,10 +83,10 @@
             get:(condition)=>{
                 let list = __list;
                 switch(condition){
-                    case "impAscend":__listUpdate.filter.importanceAscend(list);break;
-                    case "impDescend":__listUpdate.filter.importanceAscend();break;
-                    case "completed":__listUpdate.filter.importanceAscend();break;
-                    case "incompleted":__listUpdate.filter.importanceAscend();break;
+                    case "impAscend":;break;
+                    case "impDescend":;break;
+                    case "completed":__filtered=__list.filter((item)=>{return item.completed===true});break;
+                    case "incompleted":__filtered=__list.filter((item)=>{return item.completed===false});break;
                 }
             },
             importanceAscend:(list)=>{
@@ -118,8 +131,8 @@
     #__grid{
         background-color: rgb(223, 223, 223);
         border:solid;
-        width: 70vw;
-        height: 70vh;
+        width: 65vw;
+        height: 65vh;
         overflow-y: auto;
         padding: 3vh;
         display: grid;
