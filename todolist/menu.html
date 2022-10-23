@@ -1,36 +1,71 @@
-<h2 >Menü</h2>
+<h2>Menü</h2>
 <br>
 <hr>
 <br>
 
 <div class="__items">
 
-<div>
-<p>Başlık</p>
-<input>
-</div>
+    <div>
+        <p>Başlık</p>
+        <input>
+    </div>
 
-<br>
+    <br>
 
-<div>
-<p>Önem Sırası</p>
-<input type="number" value="1">
-</div>
+    <div>
+        <p>Detaylar</p>
+        <textarea></textarea>
+    </div>
+
+    <br>
+
+    <div>
+        <p>Önem Sırası</p>
+        <select>
+            <option value="0">#0 | Önemsiz</option>
+            <option value="1" style='color:green'>#1 | Az Önemli</option>
+            <option value="2" style='color:blue'>#2 | Önemli</option>
+            <option value="3" style='color:purple'>#3 | Çok Önemli</option>
+            <option value="4" style='color:indigo'>#4 | Acil</option>
+            <option value="5" style='color:orange'>#5 | Acil-İleri</option>
+            <option value="6" style='color:red;'>#6 | Acil-Önemli</option>
+        </select>
+    </div>
+
+    <br>
+    <div>
+        <button>Ekle</button>
+    </div>
 
 </div>
 
 
 <style>
-    menu{
+    menu {
         background-color: rgb(207, 207, 207);
         border-right: 1px solid;
         height: 100%;
         overflow-y: auto;
     }
-    .__items>*{
+
+    .__items>* {
         background-color: rgba(250, 235, 215, 0.123);
         padding: 1vh;
-        border:solid 1px;
+        border: solid 1px;
         border-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1vh;
+    }
+
+    textarea,
+    input {
+        resize: vertical;
+        width: 80%;
+    }
+
+    option{
+        font-weight: bold;
     }
 </style>
