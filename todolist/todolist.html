@@ -1,4 +1,4 @@
-<h2>Yapılacaklar Listesi {{__list[0]?`(${__list.length})`:""}}</h2>
+<h2>Yapılacaklar Listesi {{__list[0]?`(${__list.length}) [${__listUpdate.getCompleted()}]`:""}}</h2>
 <br>
 <hr>
 <br>
@@ -75,5 +75,9 @@
         color: red;
         font-weight: bold;
         border: dashed 1px;
+    }
+    .__checkedItem{
+        text-decoration:line-through;
+        font-style: italic;
     }
 </style>

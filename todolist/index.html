@@ -37,8 +37,8 @@
                 <div id="__importance${item.importance}">
                 <input type="checkbox" class="__checkbox" onclick="__listUpdate.checked(${item.key})" ${item.completed?"checked":""}>
                 <div>
-                <h3>${item.title}</h3>
-                <p>${item.details}</p>
+                <h3 class="${item.completed?'__checkedItem':''}">${item.title}</h3>
+                <p class="${item.completed?'__checkedItem':''}">${item.details}</p>
                 </div>
                 </div>
                 `)
@@ -48,7 +48,38 @@
         }
         },
         checked:(key)=>{
-            console.log(key)
+            let keys=key;
+            __list.map((objs)=>{
+                if(objs.key.toString()==key.toString()){
+                    objs.completed=!objs.completed;
+                    console.log(objs);
+                }
+            })
+            set();
+        },
+        getCompleted:()=>{
+            let completed=0;
+            __list.map((item)=>{
+                item.completed?completed++:"";
+            })
+            return completed;
+        },
+        filter:{
+            get:()=>{
+
+            },
+            importanceAscend:()=>{
+                
+            },
+            importanceDescend:()=>{
+
+            },
+            completed:()=>{
+
+            },
+            incompleted:()=>{
+
+            }
         }
     }
 
