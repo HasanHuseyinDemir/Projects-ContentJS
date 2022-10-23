@@ -83,8 +83,16 @@
             get:(condition)=>{
                 let list = __list;
                 switch(condition){
-                    case "impAscend":;break;
-                    case "impDescend":;break;
+                    case "impAscend":
+                        __filtered=[];
+                        __filtered=__list.sort((a,b)=>b.importance-a.importance);
+                        
+                    ;break;
+                    case "impDescend":
+                        __filtered=[];
+                        __filtered=__list.sort((a,b)=>a.importance-b.importance);    
+                    ;break;
+                    case "urgent":__filtered=__list.filter((item)=>{return item.importance>3});break;
                     case "completed":__filtered=__list.filter((item)=>{return item.completed===true});break;
                     case "incompleted":__filtered=__list.filter((item)=>{return item.completed===false});break;
                 }
