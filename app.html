@@ -2,10 +2,15 @@
     activeApp="";
 </script>
 
+<div id="panels">
+<div id="panel"></div>
+<div>
 <h1 align="center">{{activeApp?activeApp+" Uygulaması":"Aktif Bir Uygulama Yok"}}</h1>
-
 <div id="page"></div>
-{%cRender("./todolist/index.html","#page","todo"),""%}
+</div>
+</div>
+{%cRender("./components/todolist/index.html","#page","todo"),""%}
+{%cRender("./SidePanel/index.html","#panel","panel"),""%}
 
 
 <style>
@@ -21,6 +26,17 @@
     }
     *{
         margin:0;
+    }
+    #panels{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        padding:4vh;
+        height: 90vh;
+    }
+    #panel{
+        background-color: blanchedalmond;
+        overflow-y: auto;
+        border:solid black;
     }
     
 </style>

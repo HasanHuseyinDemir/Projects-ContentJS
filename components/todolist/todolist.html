@@ -3,19 +3,13 @@
 <hr>
 <br>
 
-<script>
-    __SeeExamples=false;
-</script>
-
 <div id="__todoitems">
 
-    <Example visible="__SeeExamples"/>
-    
-    {{__filter=="all"?__listUpdate.getList():__filter?__listUpdate.getFiltered():""}}
+    {{__filter=="all"?__listUpdate.getList():__filter?__listUpdate.getFiltered():"Bulunamadı!"}}
 
 </div>
 
-{%cRender("./todolist/example.html","example","#key"),""%}
+
 
 <style>
     .__checkbox {

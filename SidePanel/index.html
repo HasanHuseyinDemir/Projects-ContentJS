@@ -1,0 +1,14 @@
+<h1 align="center">Projeler</h1>
+<hr>
+<h3>Projeler</h3>
+<select onchange="__getComponent(value)">
+    <option>Proje Seçiniz</option>
+    <option value="todolist">Yapılacaklar Listesi</option>
+    <option value="calculator">Hesap Makinesi</option>
+</select>
+
+<script>
+    __getComponent=(component)=>{
+        cRender(`./components/${component}/index.html`,"#page",component);
+    }
+</script>
