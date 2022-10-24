@@ -39,7 +39,7 @@
                 <div id="__importance${item.importance}">
                 <input type="checkbox" class="__checkbox" onclick="__listUpdate.checked(${item.key})" ${item.completed?"checked":""}>
                 <div>
-                <h3 class="${item.completed?'__checkedItem':''}">${item.title}</h3>
+                <h3 class="${item.completed?'__checkedItem':''}" style="display:flex;justify-content:space-between">${item.title} <span style="color:gray;cursor:pointer;" onclick="__listUpdate.delete(${item.key})">&#10006;</span></h3>
                 <p class="${item.completed?'__checkedItem':''}">${item.details}</p>
                 </div>
                 </div>
@@ -55,8 +55,9 @@
                 return (`
                 <div id="__importance${item.importance}">
                 <input type="checkbox" class="__checkbox" onclick="__listUpdate.checked(${item.key})" ${item.completed?"checked":""}>
+
                 <div>
-                <h3 class="${item.completed?'__checkedItem':''}">${item.title}</h3>
+                    <h3 class="${item.completed?'__checkedItem':''}" style="display:flex;justify-content:space-between">${item.title} <span style="color:gray;cursor:pointer;" onclick="__listUpdate.delete(${item.key})">&#10006;</span></h3>
                 <p class="${item.completed?'__checkedItem':''}">${item.details}</p>
                 </div>
                 </div>
@@ -97,6 +98,12 @@
                     case "incompleted":__filtered=__list.filter((item)=>{return item.completed===false});break;
                 }
             }
+        },
+        delete:(key)=>{
+            __list=__list.filter((item)=>{return item.key!==key});
+            console.log(key);
+            __listUpdate.filter.get(__filter);
+            set();
         }
     }
 

@@ -1,0 +1,24 @@
+[
+{
+    "title":"Hesap Makinesi",
+    "info":"",
+    "source":"./components/calculator/index.html",
+    "key":"calculator"
+},
+{
+    "title":"To-Do List",
+    "info":"",
+    "source":"./components/todolist/index.html",
+    "key":"todo"
+},
+{
+
+},
+{
+
+},
+{
+
+}
+]
+

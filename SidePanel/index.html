@@ -1,14 +1,28 @@
 <h1 align="center">Projeler</h1>
 <hr>
-<h3>Projeler</h3>
+<br>
 <select onchange="__getComponent(value)">
     <option>Proje Seçiniz</option>
     <option value="todolist">Yapılacaklar Listesi</option>
     <option value="calculator">Hesap Makinesi</option>
 </select>
+<br>
+<h3>{{__description?__description:"Herhangi Bir Proje Seçin"}}</h3>
+
 
 <script>
     __getComponent=(component)=>{
         cRender(`./components/${component}/index.html`,"#page",component);
+        __description=component;
     }
+    __description="";
 </script>
+
+<style>
+    #__{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
