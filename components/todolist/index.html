@@ -101,7 +101,6 @@
         },
         delete:(key)=>{
             __list=__list.filter((item)=>{return item.key!==key});
-            console.log(key);
             __listUpdate.filter.get(__filter);
             set();
         }

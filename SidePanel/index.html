@@ -1,13 +1,46 @@
+<script>
+    __collapse={
+        applications:false,
+        clones:false,
+    };
+
+    //activeProject prevents unnecesarry page renders
+    __activeProject="";
+    __getProject=(project)=>{
+
+        switch(project){
+            case "todo":
+                __activeProject!==project?
+                (
+                cRender("./components/todolist/index.html","#page","todo"),
+                __activeProject=project
+                )
+                :"";
+            break;
+
+            case "calculator":
+                __activeProject!==project?(
+                cRender("./components/calculator/index.html","#page","calculator"),
+                __activeProject=project
+                ):"";
+            break;
+        }
+    }
+</script>
 <h1 align="center">Projeler</h1>
 <hr>
 <br>
-<select onchange="__getComponent(value)">
-    <option>Proje Seçiniz</option>
-    <option value="todolist">Yapılacaklar Listesi</option>
-    <option value="calculator">Hesap Makinesi</option>
-</select>
+
+<!--Uygulamalar-->
+<div class="__panelItem">
+<h3>Uygulamalar <button class="__collapseIcon" onclick="__collapse.applications=!__collapse.applications;set();">{{__collapse.applications?"&#9672;":"&#9671;"}}</button></h3>
+<div visible="__collapse.applications" class="__collapseOpen">
+    <button onclick="__getProject('calculator')">Hesap Makinesi</button>
+    <button onclick="__getProject('todo')">Yapılacaklar Listesi</button>
+</div>
+</div>
+
 <br>
-<h3>{{__description?__description:"Herhangi Bir Proje Seçin"}}</h3>
 
 
 <script>
@@ -16,7 +49,9 @@
         __description=component;
     }
     __description="";
+
 </script>
+
 
 <style>
     #__{
@@ -24,5 +59,28 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 2vh;
+    }
+    .__panelItem{
+        background-color: rgba(127, 255, 212, 0.342);
+        padding: 5%;
+        border: 1px solid rgba(0, 0, 0, 0.418);
+        border-radius: 5px;
+    }
+    .__collapseIcon{
+        transition: 0.4s;
+        cursor: pointer;
+        border:none;
+        background-color: transparent;
+        padding: 0.5vh;
+        font-size: 22px;
+    }
+    .__collapseIcon:hover{
+        color:rgb(78, 78, 78);
+        text-shadow:0px 0px 12px rgb(0, 255, 106) ;
+    }
+    .__collapseOpen{
+        display: flex;
+        flex-direction: column;
     }
 </style>
