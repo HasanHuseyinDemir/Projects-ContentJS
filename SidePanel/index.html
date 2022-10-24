@@ -12,7 +12,7 @@
             case "todo":
                 __activeProject!==project?
                 (
-                cRender("./components/todolist/index.html","#page","todo"),
+                cRender("./components/applications/todolist/index.html","#page","todo"),
                 __activeProject=project
                 )
                 :"";
@@ -20,7 +20,7 @@
 
             case "calculator":
                 __activeProject!==project?(
-                cRender("./components/calculator/index.html","#page","calculator"),
+                cRender("./components/applications/calculator/index.html","#page","calculator"),
                 __activeProject=project
                 ):"";
             break;
