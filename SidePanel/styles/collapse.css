@@ -1,0 +1,16 @@
+.__collapseIcon{
+    transition: 0.4s;
+    cursor: pointer;
+    border:none;
+    background-color: transparent;
+    padding: 0.5vh;
+    font-size: 22px;
+}
+.__collapseIcon:hover{
+    color:rgb(78, 78, 78);
+    text-shadow:0px 0px 12px rgb(0, 255, 106) ;
+}
+.__collapseOpen{
+    display: flex;
+    flex-direction: column;
+}
