@@ -1,56 +1,5 @@
 <script>
-    __screenControls=(mode)=>{
-        __mode=mode;
-        
-        if(__x==0){
-            __x=parseInt(__screen.value);
-        }else{
-            if(__y==0){
-                __y=parseInt(__screen.value);
-            }else{
-                switch(mode){
-                case "<sup>POW</sup>":__x=Math.pow(__x,__y);break;
-                case "%":__x=__x%__y;break;
-                case "/;":__x=__x/__y;break;
-                case "*":__x=__x*__y;break;
-                case "-":__x=__x-__y;break;
-                case "+":__x=__x+__y;break;
-                }
-               __y=0;
-            }
-        }
-        __screen.value=0;
-        mode=="AC"?(__x=0,__y=0,__mode="",__screen.value=0):"";
-        set();
-    }
-    __equals=()=>{
-        if(__mode&&__x&&__y){
-            if(__mode!="<sup>POW</sup>"){
-                __x=eval(`parseInt(__x)${__mode}parseInt(__y)`);
-            }else{
-                __x=Math.pow(__x,__y);
-            }
-
-            __y=0;
-        }else if(__mode&&__x&&__screen.value){
-            if(__mode!="<sup>POW</sup>"){
-            __x=eval(`parseInt(__x)${__mode}parseInt(__screen.value)`);
-            }else{
-                __x=Math.pow(__x,__screen.value);
-            }
-        }
-        __screen.value=0
-        set();
-    }
-    __screenAdd=(num)=>{
-        if(__x&&__y&&__mode){
-            __equals();
-        }
-        __screen.value=__screen.value+num;
-        if(__screen.value>0&&__screen.value.charAt(0)==0){
-            __screen.value=__screen.value.slice(1);
-        }   
-    }
+load.scripts(["equals.js","screenAdd.js","screenControls.js"],"./components/applications/calculator/modules/","$$");
 </script>
 
 <div id="__calcTable">

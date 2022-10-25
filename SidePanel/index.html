@@ -3,29 +3,11 @@
         applications:false,
         clones:false,
     };
-
+    __projectList=[];
+    load.script("./SidePanel/projectList.js","$$");
     //activeProject prevents unnecesarry page renders
     __activeProject="";
-    __getProject=(project)=>{
 
-        switch(project){
-            case "todo":
-                __activeProject!==project?
-                (
-                cRender("./components/applications/todolist/index.html","#page","todo"),
-                __activeProject=project
-                )
-                :"";
-            break;
-
-            case "calculator":
-                __activeProject!==project?(
-                cRender("./components/applications/calculator/index.html","#page","calculator"),
-                __activeProject=project
-                ):"";
-            break;
-        }
-    }
 </script>
 <h1 align="center">Projeler</h1>
 <hr>
@@ -34,18 +16,18 @@
 <!--Uygulamalar-->
 <div class="__panelItem">
 <h3>Uygulamalar <button class="__collapseIcon" onclick="__collapse.applications=!__collapse.applications;set();">{{__collapse.applications?"&#9672;":"&#9671;"}}</button></h3>
-<div visible="__collapse.applications" class="__collapseOpen">
+<c visible="__collapse.applications" class="__collapseOpen">
     <button onclick="__getProject('calculator')">Hesap Makinesi</button>
     <button onclick="__getProject('todo')">Yapılacaklar Listesi</button>
 </div>
-</div>
+</c>
 
 <br>
 
 
 <script>
     __getComponent=(component)=>{
-        cRender(`./components/${component}/index.html`,"#page",component);
+        content.render(`./components/${component}/index.html`,"#page",component);
         __description=component;
     }
     __description="";
@@ -83,4 +65,7 @@
         display: flex;
         flex-direction: column;
     }
+    
 </style>
+
+{%load.style("./SidePanel/test.css","$$"),""%}

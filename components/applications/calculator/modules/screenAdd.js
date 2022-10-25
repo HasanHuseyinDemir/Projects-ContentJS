@@ -1,0 +1,9 @@
+__screenAdd=(num)=>{
+    if(__x&&__y&&__mode){
+        __equals();
+    }
+    __screen.value=__screen.value+num;
+    if(__screen.value>0&&__screen.value.charAt(0)==0){
+        __screen.value=__screen.value.slice(1);
+    }   
+}
