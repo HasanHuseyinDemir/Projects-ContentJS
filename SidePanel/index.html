@@ -8,6 +8,12 @@
     //activeProject prevents unnecesarry page renders
     __activeProject="";
 
+    __getComponent=(component)=>{
+        content.render(`./components/${component}/index.html`,"#page",component);
+        __description=component;
+    }
+    __description="";
+    load.style("./SidePanel/test.css","$$");
 </script>
 <h1 align="center">Projeler</h1>
 <hr>
@@ -16,24 +22,13 @@
 <!--Uygulamalar-->
 <div class="__panelItem">
 <h3>Uygulamalar <button class="__collapseIcon" onclick="__collapse.applications=!__collapse.applications;set();">{{__collapse.applications?"&#9672;":"&#9671;"}}</button></h3>
-<c visible="__collapse.applications" class="__collapseOpen">
+<div visible="__collapse.applications" class="__collapseOpen">
     <button onclick="__getProject('calculator')">Hesap Makinesi</button>
     <button onclick="__getProject('todo')">Yapılacaklar Listesi</button>
 </div>
-</c>
+</div>
 
 <br>
-
-
-<script>
-    __getComponent=(component)=>{
-        content.render(`./components/${component}/index.html`,"#page",component);
-        __description=component;
-    }
-    __description="";
-
-</script>
-
 
 <style>
     #__{
@@ -67,5 +62,3 @@
     }
     
 </style>
-
-{%load.style("./SidePanel/test.css","$$"),""%}
