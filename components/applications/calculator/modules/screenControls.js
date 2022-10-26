@@ -20,5 +20,5 @@ __screenControls=(mode)=>{
     }
     __screen.value=0;
     mode=="AC"?(__x=0,__y=0,__mode="",__screen.value=0):"";
-    set();
+    set("page");
 }

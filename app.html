@@ -3,15 +3,15 @@
 </script>
 
 <div id="panels">
-<div id="panel"></div>
+<Panel/>
 <div>
 <h1 align="center">{{activeApp?activeApp:"Aktif Bir Uygulama Yok"}}</h1>
-<div id="page"></div>
+<Page/>
 </div>
 </div>
 
-{%content.render("./components/welcome.html","#page"),""%}
-{%content.render("./SidePanel/index.html","#panel","panel"),""%}
+{%content.render("./components/welcome.html","Page"),""%}
+{%content.render("./SidePanel/index.html","Panel","panel"),""%}
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&family=Roboto:wght@100;300;400;500;700;900&family=Silkscreen&display=swap');
@@ -19,7 +19,7 @@
         font-family: 'Roboto', sans-serif;
         background-color: rgb(255, 30, 0);
     }
-    #page{
+    page{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -34,7 +34,7 @@
         padding:4vh;
         height: 90vh;
     }
-    #panel{
+    Panel{
         background-color: blanchedalmond;
         overflow-y: auto;
         border:solid black;

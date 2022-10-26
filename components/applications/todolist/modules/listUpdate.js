@@ -21,7 +21,7 @@ __listUpdate = {
         title.value = "";
         details.value = "";
         importance.value = 0;
-        set();
+        set("page");
     },
     getList: () => {
         if(__list[0]){
@@ -62,7 +62,7 @@ __listUpdate = {
                 objs.completed=!objs.completed;
             }
         })
-        set();
+        set("page");
     },
     getCompleted:()=>{
         let completed=0;
@@ -93,6 +93,6 @@ __listUpdate = {
     delete:(key)=>{
         __list=__list.filter((item)=>{return item.key!==key});
         __listUpdate.filter.get(__filter);
-        set();
+        set("page");
     }
 }

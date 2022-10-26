@@ -15,5 +15,5 @@ __equals=()=>{
         }
     }
     __screen.value=0
-    set();
+    set("page");
 }
