@@ -10,14 +10,15 @@
 </div>
 </div>
 
-{%content.render("./components/welcome.html","Page"),""%}
+{%content.render("./components/applications/variousCalculations/index.html","Page"),""%}
 {%content.render("./SidePanel/index.html","Panel","panel"),""%}
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&family=Roboto:wght@100;300;400;500;700;900&family=Silkscreen&display=swap');
+    @import url("scrollbar.css");
     body{
         font-family: 'Roboto', sans-serif;
-        background-color: rgb(255, 30, 0);
+        background-color: rgb(154, 73, 247);
     }
     page{
         display: flex;
@@ -39,5 +40,6 @@
         overflow-y: auto;
         border:solid black;
     }
+
     
 </style>

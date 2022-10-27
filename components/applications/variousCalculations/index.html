@@ -1,0 +1,41 @@
+<h2>{{__selected}}</h2>
+<div id="__panel">
+    <div id="__items" class="set" data="__getItems()"/>
+    <div id="__list"/>
+    <div id="__calculate"/>
+</div>
+
+<script>
+load.script("./components/applications/variousCalculations/modules/items.js","$$");
+load.style("./components/applications/variousCalculations/styles/items.css","$$");
+</script>
+
+<style>
+    #__{
+        padding: 5vh;
+        height: 70vh;
+        width: 80vw;
+        background-color: rgb(203, 255, 161);
+        border: solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    #__panel {
+        display: grid;
+        grid-gap: 1px;
+        justify-content: center;
+        align-items: center;
+        height: 85%;
+        grid-template-columns: 3fr 6fr 9fr;
+        background-color: rgba(255, 255, 255, 0.36);
+        padding: 2vw;
+    }
+
+</style>
+
+
+{%activeApp="Çeşitli Hesaplamalar",document.title="Merhaba",""%}

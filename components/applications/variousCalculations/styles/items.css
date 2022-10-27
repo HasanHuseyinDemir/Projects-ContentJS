@@ -1,0 +1,48 @@
+    #__items,#__list {
+        display: grid;
+        background-color: rgb(222, 222, 222);
+        padding: 2vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        align-items: center;
+        border: solid 1px gray;
+        height: 100%;
+
+    }
+
+    .__item {
+        width: 2vw;
+        height: 2vw;
+        padding: 3vw;
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: rgba(0, 0, 0, 0.19) solid;
+        cursor: pointer;
+        user-select: none;
+        transition: 0.3s ease;
+    }
+    .__item>img{
+        height: 6vh;
+    }
+
+    .__item:hover{
+        border:solid black;
+    }
+    .__itemSelected{
+        border-color:black;
+    }
+    .bgorange{
+        background-color: orange;
+    }
+    .bgpurple{
+        background-color: orchid;
+    }
+    .bgcyan{
+        background-color: cyan;
+    }
+    .bggold{
+       background-color: gold; 
+    }
