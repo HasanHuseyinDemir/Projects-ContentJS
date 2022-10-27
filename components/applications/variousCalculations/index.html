@@ -1,7 +1,7 @@
 <h2>{{__selected}}</h2>
 <div id="__panel">
     <div id="__items" class="set" data="__getItems()"/>
-    <div id="__list"/>
+    <div id="__list" class="set" data="__getItemsList()"/>
     <div id="__calculate"/>
 </div>
 
@@ -30,7 +30,7 @@ load.style("./components/applications/variousCalculations/styles/items.css","$$"
         justify-content: center;
         align-items: center;
         height: 85%;
-        grid-template-columns: 3fr 6fr 9fr;
+        grid-template-columns: 3fr 6fr 8fr;
         background-color: rgba(255, 255, 255, 0.36);
         padding: 2vw;
     }

@@ -1,33 +1,46 @@
 __thisFolder="./components/applications/variousCalculations";
 __selected="Hesaplamalar";
+__selectedCategory="date";
 __items=[
     {
         title:"Tarih",
         color:"purple",
         src:`${__thisFolder}/date/index.html`,
         image:`${__thisFolder}/icons/time.png`,
-        selected:true
+        selected:false,
+        detail:"date"
     },
     {
         title:"Boyut",
         color:"cyan",
         src:`${__thisFolder}/size/index.html`,
         image:`${__thisFolder}/icons/height.png`,
-        selected:false
+        selected:false,
+        detail:"height",
     },
     {
         title:"Matematik",
         color:"orange",
         src:`${__thisFolder}/math/index.html`,
         image:`${__thisFolder}/icons/math.png`,
-        selected:false
+        selected:false,
+        detail:"math"
     },
     {
         title:"Finans",
         color:"gold",
         src:`${__thisFolder}/finance/index.html`,
         image:`${__thisFolder}/icons/finance.png`,
-        selected:false
+        selected:false,
+        detail:"finance"
+    },
+    {
+        title:"Metin",
+        color:"yellowgreen",
+        src:`${__thisFolder}/finance/index.html`,
+        image:`${__thisFolder}/icons/string.png`,
+        selected:false,
+        detail:"string"
     },
 ]
 __selectItem=(index)=>{
@@ -36,6 +49,8 @@ __selectItem=(index)=>{
     })
     __items[index].selected=true;
     __selected=__items[index].title+" Hesaplamaları";
+    __selectedCategory=__items[index].detail;
+    console.log(__selectedCategory);
     set();
 }
 __getItems=()=>{
@@ -50,3 +65,5 @@ __getItems=()=>{
         `
     }).join(""))
 }
+
+load.script(`${__thisFolder}/modules/list.js`,"$$");

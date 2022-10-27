@@ -1,19 +1,27 @@
     #__items,#__list {
-        display: grid;
+
         background-color: rgb(222, 222, 222);
-        padding: 2vh;
+        padding: 1vw;
         overflow-x: hidden;
         overflow-y: scroll;
         align-items: center;
         border: solid 1px gray;
         height: 100%;
+    }
+    #__items{
+        display: grid;
+    }
 
+    #__list{
+        display: flex;
+        flex-direction: column;
     }
 
     .__item {
         width: 2vw;
         height: 2vw;
         padding: 3vw;
+        font-size: 1.3vw;
         word-wrap: break-word;
         display: flex;
         flex-direction: column;
@@ -22,10 +30,16 @@
         border: rgba(0, 0, 0, 0.19) solid;
         cursor: pointer;
         user-select: none;
-        transition: 0.3s ease;
+        transition: 0.3s;
+    }
+    .__listItem{
+        padding: 1vw;
+        background-color:rgb(201,201,201);
+        border:solid rgba(0,0,0,0.35);
+        width: 90%;
     }
     .__item>img{
-        height: 6vh;
+        height: 3vw;
     }
 
     .__item:hover{
@@ -45,4 +59,7 @@
     }
     .bggold{
        background-color: gold; 
+    }
+    .bgyellowgreen{
+        background-color: greenyellow;
     }
