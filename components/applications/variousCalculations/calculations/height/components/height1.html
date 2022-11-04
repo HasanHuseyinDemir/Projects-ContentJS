@@ -1,0 +1,22 @@
+<div class="__height">
+    <h3>{%props.spec?props.spec:"X"%} =</h3>
+    <input type="number" min="0">
+        <select>
+            <option style="color:rgb(0, 14, 0)"value="1000">Kilometre (km)</option>
+            <option style="color:rgb(1, 53, 1)"value="100">Hektometre (hm)</option>
+            <option style="color:rgb(0, 95, 0)"value="10">Dekametre (dam)</option>
+            <option style="color:rgb(1, 107, 1)" selected value="1">Metre (m)</option>
+            <option style="color:green" value="0.1">Desimetre (dm)</option>
+            <option style="color:rgb(1, 158, 1)"value="0.01">Santimetre (cm)</option>
+            <option style="color:rgb(0, 219, 0)"value="0.001">Milimetre (mm)</option>
+        </select>
+</div>
+
+<style>
+    .__height {
+    display: flex;
+    justify-content: center;
+    border:solid;
+    padding: 1vh
+}
+</style>

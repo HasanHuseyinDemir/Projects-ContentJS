@@ -1,6 +1,6 @@
 __thisFolder="./components/applications/variousCalculations";
 __selected="Hesaplamalar";
-__selectedCategory="date";
+__selectedCategory="height";
 __items=[
     {
         title:"Tarih",

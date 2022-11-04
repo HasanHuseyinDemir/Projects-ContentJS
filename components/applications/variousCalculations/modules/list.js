@@ -2,139 +2,134 @@ __itemsList={
     date:[
         {
             title:"İki tarih arasındaki gün hesaplama",
-            src:`${__thisFolder}/date/between2dates.html`,
+            src:`${__thisFolder}/calculations/date/between2dates.html`,
             
         },
         {
             title:"Yılın kaçıncı günü hesaplama",
-            src:`${__thisFolder}/date/dayofyear.html`,
-            
-        },
-        {
-            title:"Doğum günü hesaplama",
-            src:`${__thisFolder}/date/dayofyear.html`,
+            src:`${__thisFolder}/calculations/date/dayofyear.html`,
             
         }
     ],
     height:[
         {
             title:"Metrekare Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/m2.html`,
             
         },
         {
             title:"Uzunluk Birimi Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Kalori Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"İnç Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },        {
             title:"Alan Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Hız Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Taban Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Binary Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         }
     ],
     math:[
         {
             title:"Faktöriyel Hesaplama",
-            src:`${__thisFolder}/math/dayofyear.html`,
+            src:`${__thisFolder}/calculations/math/dayofyear.html`,
             
         },
         {
             title:"Yüzde Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Oran Orantı Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Oran Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Rastgele Sayı Üretici",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Kombinasyon ve Permütasyon",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
         {
             title:"Karekök Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         }
     ],
     finance:[
         {
             title:"Faiz Hesaplama",
-            src:`${__thisFolder}/finance/dayofyear.html`,
+            src:`${__thisFolder}/calculations/finance/dayofyear.html`,
             
         },
         {
             title:"Bahşiş Hesaplama",
-            src:`${__thisFolder}/finance/dayofyear.html`,
+            src:`${__thisFolder}/calculations/finance/dayofyear.html`,
             
         },
         {
             title:"Portfolyo Hesaplama",
-            src:`${__thisFolder}/height/dayofyear.html`,
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         }
     ],
     string:[
         {
             title:"Karakter Sayısı Hesaplama",
-            src:`${__thisFolder}/string/dayofyear.html`,
+            src:`${__thisFolder}/calculations/string/dayofyear.html`,
             
         },
         {
             title:"Kelime Sayısı Hesaplama",
-            src:`${__thisFolder}/string/dayofyear.html`,
+            src:`${__thisFolder}/calculations/string/dayofyear.html`,
             
         },
         {
             title:"Sesli Harf Hesaplama",
-            src:`${__thisFolder}/string/dayofyear.html`,
+            src:`${__thisFolder}/calculations/string/dayofyear.html`,
             
         },
         {
             title:"Bulunan Kelime Hesaplama",
-            src:`${__thisFolder}/string/dayofyear.html`,
+            src:`${__thisFolder}/calculations/string/dayofyear.html`,
             
         },
         {
             title:"Kelime Bul ve Değiştir",
-            src:`${__thisFolder}/string/dayofyear.html`,
+            src:`${__thisFolder}/calculations/string/dayofyear.html`,
             
         }
     ],

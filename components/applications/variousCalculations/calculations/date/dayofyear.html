@@ -1,0 +1,24 @@
+<h2 align="center">Yılın Kaçıncı Günü Hesaplama</h2>
+<br>
+<div id="__dateComponent" arrange="'first'" key="'$$'">Tarih</div>
+
+<div id="result"/>
+
+<defer>
+    content.render(`./components/applications/variousCalculations/calculations/date/components/DayMonthYear.html`,"#__dateComponent");
+    content.render(`./components/applications/variousCalculations/calculations/date/components/Result.html`,"#result","$$");
+    //default
+    __day=0;
+    __getResult=()=>{
+        let dayValue=document.querySelector("#__firstInputDay").value;
+        let yearValue=document.querySelector("#__firstInputYear").value;
+        let monthValue=document.querySelector("#__firstInputMonth").value;
+        let firstDayOfYear=new Date("1/1/"+yearValue);
+        let selectedDayOfYear=new Date(`${monthValue}/${dayValue}/${yearValue}`);
+        
+        __day=Math.ceil(Math.abs(firstDayOfYear-selectedDayOfYear)/(1000 * 60 * 60 * 24));
+        set("fieldset#__between2dates");
+
+    }
+
+</defer>

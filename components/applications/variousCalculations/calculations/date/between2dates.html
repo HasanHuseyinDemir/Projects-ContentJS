@@ -6,15 +6,11 @@
 </div>
 <br>
 
-<fieldset id="__between2dates">
-<legend>
-    Sonuç
-</legend>
-    <h1 align="center">{{__day}}</h1>
-</fieldset>
+<div id="result"/>
 
 <defer>
-    content.render(`./components/applications/variousCalculations/date/components/DayMonthYear.html`,"#__dateComponent");
+    content.render(`./components/applications/variousCalculations/calculations/date/components/DayMonthYear.html`,"#__dateComponent");
+    content.render(`./components/applications/variousCalculations/calculations/date/components/Result.html`,"#result","$$");
     __getResult=()=>{
         let first={
             dayValue:document.querySelector("#__firstInputDay").value,
