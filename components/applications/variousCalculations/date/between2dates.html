@@ -1,1 +1,57 @@
-selamlar
+<h2 align="center">İki Tarih Arasındaki Gün Hesaplama</h2>
+<br>
+<div id="__dateForm2grid">
+    <div id="__dateComponent" arrange="'first'" key="$$">İlk Tarih</div>
+    <div id="__dateComponent" arrange="'second'" key="$$">İkinci Tarih</div>
+</div>
+<br>
+
+
+<script>
+
+</script>
+
+
+<defer>
+    __getYear=()=>{
+        const date=new Date();
+        const year=date.getFullYear();
+        document.querySelector("#__firstInputYear").value=year;
+        document.querySelector("#__secondInputYear").value=year;
+    }
+    content.render(`./components/applications/variousCalculations/date/components/DayMonthYear.html`,"#__dateComponent");
+</defer>
+
+
+<style>
+    #__inputGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0.3vh;
+    }
+
+    #__inputGrid>input {
+        width: auto;
+    }
+
+    #__dateComponent {
+        padding: 2vh;
+        border: solid 1px gray;
+    }
+
+    #__dateForm2grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    #__inputGrid>input {
+        width: 6vh;
+    }
+
+    #__firstInputMonth,
+    #__secondInputMonth {
+        width: 100%;
+        font-size: 1vw;
+    }
+</style>

@@ -10,8 +10,10 @@
 </div>
 </div>
 
-{%content.render("./components/applications/variousCalculations/index.html","Page"),""%}
-{%content.render("./SidePanel/index.html","Panel","panel"),""%}
+<defer>
+content.render("./components/applications/variousCalculations/index.html","Page","various")
+content.render("./SidePanel/index.html","Panel","panel")
+</defer>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&family=Roboto:wght@100;300;400;500;700;900&family=Silkscreen&display=swap');
@@ -19,6 +21,10 @@
     body{
         font-family: 'Roboto', sans-serif;
         background-color: rgb(154, 73, 247);
+        transition: 0.4s ease-in-out;
+    }
+    body>*{
+        font-size: 1.2vw;
     }
     page{
         display: flex;

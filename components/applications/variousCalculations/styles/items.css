@@ -16,6 +16,12 @@
         display: flex;
         flex-direction: column;
     }
+    #__calculate{
+        height: 100%;
+        border:solid 1px gray;
+        padding: 1vw;
+        background:rgb(222, 222, 222);
+    }
 
     .__item {
         width: 2vw;
@@ -37,6 +43,8 @@
         background-color:rgb(201,201,201);
         border:solid rgba(0,0,0,0.35);
         width: 90%;
+        user-select: none;
+        cursor:pointer;
     }
     .__item>img{
         height: 3vw;

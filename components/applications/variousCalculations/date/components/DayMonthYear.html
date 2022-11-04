@@ -1,0 +1,23 @@
+<h3>{%slot%}</h3>
+<div id="__inputGrid">
+<input max="31" min="1" value="1" id="__{%props.arrange%}InputDay" type="number">
+<select id="__{%props.arrange%}InputMonth">
+    <option value="1">Ocak</option>
+    <option value="2">Şubat</option>
+    <option value="3">Mart</option>
+    <option value="4">Nisan</option>
+    <option value="5">Mayıs</option>
+    <option value="6">Haziran</option>
+    <option value="7">Temmuz</option>
+    <option value="8">Ağustos</option>
+    <option value="9">Eylül</option>
+    <option value="10">Ekim</option>
+    <option value="11">Kasım</option>
+    <option value="12">Aralık</option>
+</select>
+<input min="0" id="__{%props.arrange%}InputYear" type="number">
+</div>
+
+<defer>
+    __getYear();
+</defer>

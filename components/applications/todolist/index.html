@@ -20,10 +20,11 @@
 
     </div>
 
-    {%content.render("./components/applications/todolist/menu.html","menu","$$"),""%}
-    {%content.render("./components/applications/todolist/todolist.html","todolist","$$"),""%}
-    {%content.render("./components/applications/todolist/footer.html","footer","$$"),""%}
-    
+    <defer>
+    content.render("./components/applications/todolist/menu.html","menu","$$");
+    content.render("./components/applications/todolist/todolist.html","todolist","$$");
+    content.render("./components/applications/todolist/footer.html","footer","$$");
+    </defer>
 
 <style>
     #__grid{
@@ -39,6 +40,9 @@
     #__grid>*{  
         height: 90%;
         word-wrap: break-word;
+    }
+    #__grid footer {
+    width: 70vw
     }
     #__row{
         display:flex;

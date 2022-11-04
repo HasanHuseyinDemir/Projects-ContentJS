@@ -1,19 +1,19 @@
 <script>
-    __collapse={
-        applications:false,
-        clones:false,
+    __collapse = {
+        applications: false,
+        clones: false,
     };
-    __projectList=[];
-    load.script("./SidePanel/projectList.js","$$");
+    __projectList = [];
+    load.script("./SidePanel/projectList.js", "$$");
     //activeProject prevents unnecesarry page renders
-    __activeProject="";
+    __activeProject = "";
 
-    __getComponent=(component)=>{
-        content.render(`./components/${component}/index.html`,"#page",component);
-        __description=component;
+    __getComponent = (component) => {
+        content.render(`./components/${component}/index.html`, "#page", component);
+        __description = component;
     }
-    __description="";
-    load.style("./SidePanel/styles/collapse.css","$$");
+    __description = "";
+    load.style("./SidePanel/styles/collapse.css", "$$");
 </script>
 <h1 align="center">Projeler</h1>
 <hr>
@@ -21,28 +21,59 @@
 
 <!--Uygulamalar-->
 <div class="__panelItem">
-<h3>Uygulamalar <button class="__collapseIcon" onclick="__collapse.applications=!__collapse.applications;set();">{{__collapse.applications?"&#9672;":"&#9671;"}}</button></h3>
-<div visible="__collapse.applications" class="__collapseOpen set">
-    <button onclick="__getProject('calculator')">Hesap Makinesi</button>
-    <button onclick="__getProject('todo')">Yapılacaklar Listesi</button>
-    <button onclick="__getProject('variousCalculations')">Çeşitli Hesaplamalar</button>
-</div>
+    <h3 class="__panelItemsGrid">Uygulamalar <button class="__collapseIcon"
+            onclick="__collapse.applications=!__collapse.applications;set();">{{__collapse.applications?"&#9672;":"&#9671;"}}</button>
+    </h3>
+    <div visible="__collapse.applications" class="__collapseOpen set">
+        <button onclick="__getProject('calculator')">Hesap Makinesi</button>
+        <button onclick="__getProject('todo')">Yapılacaklar Listesi</button>
+        <button onclick="__getProject('variousCalculations')">Çeşitli Hesaplamalar</button>
+    </div>
 </div>
 
 <br>
 
 <style>
-    #__{
+    #__ {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-top: 2vh;
     }
-    .__panelItem{
+
+    .__panelItem {
         background-color: rgba(127, 255, 212, 0.342);
         padding: 5%;
         border: 1px solid rgba(0, 0, 0, 0.418);
         border-radius: 5px;
+    }
+
+    #__ h1 {
+        font-size: 200%;
+    }
+
+    #__ h3 {
+        font-size: 130%;
+    }
+
+    .__collapseOpen button {
+        width: 100%;
+        font-size: 100%;
+
+    }
+
+    .__panelItemsGrid {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    Panel {
+        width: 18vw;
+    }
+
+    .__panelItem {
+        width: 70%;
     }
 </style>
