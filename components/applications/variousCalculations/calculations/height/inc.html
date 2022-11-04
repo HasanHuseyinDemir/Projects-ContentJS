@@ -1,0 +1,27 @@
+<h2 align="center">Metre Inc Hesaplama</h2>
+
+<div id="__height" arrange="'first'"></div>
+
+<div id="__result"/>
+<br>
+<hr>
+<br>
+
+<h2 align="center">Inc = Metre Hesaplama</h2>
+
+<div id="__height" arrange="'second'" disable_select="true"></div>
+
+<div id="__result" custom="'__secondresult'" />
+
+<defer>
+    __result=0;
+    __secondresult=0;
+    content.render("./components/applications/variousCalculations/calculations/height/components/height1.html","#__height","$$");
+    content.render("./components/applications/variousCalculations/calculations/height/components/Result.html","#__result","$$");
+    __getResult=()=>{
+        let firstRes=(__firstNumber.value*__firstSelect.value)/0.0254;
+        __result=firstRes.toFixed(6)+" Inc";
+        __secondresult=(__secondNumber.value*0.0254).toFixed(6)+" Metre"
+        set();
+    }
+</defer>

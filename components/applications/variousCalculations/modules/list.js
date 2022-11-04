@@ -18,6 +18,11 @@ __itemsList={
             
         },
         {
+            title:"İnç Hesaplama",
+            src:`${__thisFolder}/calculations/height/inc.html`,
+            
+        },  
+        {
             title:"Uzunluk Birimi Hesaplama",
             src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
@@ -27,11 +32,7 @@ __itemsList={
             src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
-        {
-            title:"İnç Hesaplama",
-            src:`${__thisFolder}/calculations/height/dayofyear.html`,
-            
-        },        {
+      {
             title:"Alan Hesaplama",
             src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
