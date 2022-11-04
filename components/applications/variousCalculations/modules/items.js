@@ -53,16 +53,17 @@ __selectItem=(index)=>{
     set();
 }
 __getItems=()=>{
-    return (__items.map((item,index)=>{
-        return`
+    let items=""
+    __items.forEach((item,index)=>{
+        items+=`
         <div class="__item ${item.selected?"__itemSelected":''} bg${item.color}" onclick="__selectItem(${index}),set('page')">
         <img  src="${item.image}"/>
         <br>
         <span>${item.title}</span>
         </div>
-        
         `
-    }).join(""))
+    })
+    return items
 }
 
 load.script(`${__thisFolder}/modules/list.js`,"$$");

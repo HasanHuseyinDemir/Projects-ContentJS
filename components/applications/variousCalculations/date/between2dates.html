@@ -1,25 +1,41 @@
 <h2 align="center">İki Tarih Arasındaki Gün Hesaplama</h2>
 <br>
 <div id="__dateForm2grid">
-    <div id="__dateComponent" arrange="'first'" key="$$">İlk Tarih</div>
-    <div id="__dateComponent" arrange="'second'" key="$$">İkinci Tarih</div>
+    <div id="__dateComponent" arrange="'first'" key="'$$'">İlk Tarih</div>
+    <div id="__dateComponent" arrange="'second'" key="'$$'">İkinci Tarih</div>
 </div>
 <br>
 
-
-<script>
-
-</script>
-
+<fieldset id="__between2dates">
+<legend>
+    Sonuç
+</legend>
+    <h1 align="center">{{__day}}</h1>
+</fieldset>
 
 <defer>
-    __getYear=()=>{
-        const date=new Date();
-        const year=date.getFullYear();
-        document.querySelector("#__firstInputYear").value=year;
-        document.querySelector("#__secondInputYear").value=year;
-    }
     content.render(`./components/applications/variousCalculations/date/components/DayMonthYear.html`,"#__dateComponent");
+    __getResult=()=>{
+        let first={
+            dayValue:document.querySelector("#__firstInputDay").value,
+            yearValue:document.querySelector("#__firstInputYear").value,
+            monthValue:document.querySelector("#__firstInputMonth").value
+        }
+        let second={
+            dayValue:document.querySelector("#__secondInputDay").value,
+            yearValue:document.querySelector("#__secondInputYear").value,
+            monthValue:document.querySelector("#__secondInputMonth").value
+        }
+        let firstDate=new Date(`${first.monthValue}/${first.dayValue}/${first.yearValue}`);
+        let secondDate=new Date(`${second.monthValue}/${second.dayValue}/${second.yearValue}`);
+
+
+
+        __day=Math.ceil(Math.abs(firstDate-secondDate)/(1000 * 60 * 60 * 24));
+        set("fieldset#__between2dates");
+    }
+    __day=0
+
 </defer>
 
 
@@ -30,28 +46,22 @@
         grid-gap: 0.3vh;
     }
 
-    #__inputGrid>input {
-        width: auto;
+    #__inputGrid>* {
+        /*width: auto;*/
+        justify-content: center;
     }
 
     #__dateComponent {
-        padding: 2vh;
-        border: solid 1px gray;
+
     }
 
     #__dateForm2grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         width: 100%;
     }
-
-    #__inputGrid>input {
-        width: 6vh;
-    }
-
     #__firstInputMonth,
     #__secondInputMonth {
-        width: 100%;
         font-size: 1vw;
     }
 </style>

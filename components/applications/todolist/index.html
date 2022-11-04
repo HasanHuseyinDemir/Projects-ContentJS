@@ -1,35 +1,35 @@
 {%activeApp="Yapılacaklar Listesi",document.title="Yapılacaklar Listesi";""%}
 
 <script>
-    __list=[];
-    __filter="all";
-    __filtered=[];
-    __getIncompleted=()=>{
-        return __list.length-__listUpdate.getCompleted();
+    __list = [];
+    __filter = "all";
+    __filtered = [];
+    __getIncompleted = () => {
+        return __list.length - __listUpdate.getCompleted();
     }
-    load.script("./components/applications/todolist/modules/listUpdate.js","$$");
-    load.style("./components/applications/todolist/styles/importances.css","$$");
+    load.script("./components/applications/todolist/modules/listUpdate.js", "$$");
+    load.style("./components/applications/todolist/styles/importances.css", "$$");
 </script>
-    <div id="__row">
-    
+<div id="__row">
+
     <div id="__grid">
-    <Menu/>
-    <TodoList/>
+        <Menu />
+        <TodoList />
     </div>
-    <Footer/>
+    <Footer />
 
-    </div>
+</div>
 
-    <defer>
+<defer>
     content.render("./components/applications/todolist/menu.html","menu","$$");
     content.render("./components/applications/todolist/todolist.html","todolist","$$");
     content.render("./components/applications/todolist/footer.html","footer","$$");
-    </defer>
+</defer>
 
 <style>
-    #__grid{
+    #__grid {
         background-color: rgb(223, 223, 223);
-        border:solid;
+        border: solid;
         width: 65vw;
         height: 65vh;
         overflow-y: auto;
@@ -37,18 +37,27 @@
         display: grid;
         grid-template-columns: 40% 60%;
     }
-    #__grid>*{  
+
+    #__grid>* {
         height: 90%;
         word-wrap: break-word;
     }
+
     #__grid footer {
-    width: 70vw
+        width: 70vw
     }
-    #__row{
-        display:flex;
+
+    #__row {
+        display: flex;
         flex-direction: column;
     }
-    menu,todolist{
+
+    menu,
+    todolist {
         padding: 4vh;
+    }
+
+    .__checkbox {
+        width: 2vw;
     }
 </style>

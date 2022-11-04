@@ -12,16 +12,17 @@ load.script("./components/applications/variousCalculations/modules/items.js","$$
 {%load.styles(["items.css","form.css"],"./components/applications/variousCalculations/styles/","$$","page"),""%}
 <style>
     #__{
-        padding: 5vh;
-        height: 70vh;
+        height: 80vh;
         width: 80vw;
         background-color: rgb(203, 255, 161);
         border: solid black;
         display: flex;
         flex-direction: column;
         align-items: center;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        overflow-y: none;
+        overflow-x: none;
+        min-height:80vh; 
+        padding: 1vw;
     }
 
     #__panel {
@@ -43,6 +44,15 @@ load.script("./components/applications/variousCalculations/modules/items.js","$$
     #__ input{
     max-width: 3vw;
     }
+    #__inputGrid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
 
 </style>
 

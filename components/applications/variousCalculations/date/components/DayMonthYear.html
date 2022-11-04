@@ -1,7 +1,9 @@
-<h3>{%slot%}</h3>
+<h3 align="center">{%slot%}</h3>
+<hr>
+<br>
 <div id="__inputGrid">
-<input max="31" min="1" value="1" id="__{%props.arrange%}InputDay" type="number">
-<select id="__{%props.arrange%}InputMonth">
+<input oninput="__getResult()" max="31" min="1" value="1" id="__{%props.arrange%}InputDay" type="number">
+<select onchange="__getResult()" id="__{%props.arrange%}InputMonth">
     <option value="1">Ocak</option>
     <option value="2">Şubat</option>
     <option value="3">Mart</option>
@@ -15,9 +17,19 @@
     <option value="11">Kasım</option>
     <option value="12">Aralık</option>
 </select>
-<input min="0" id="__{%props.arrange%}InputYear" type="number">
+<input oninput="__getResult()" min="0" id="__{%props.arrange%}InputYear" type="number">
 </div>
 
 <defer>
-    __getYear();
+    document.querySelector("#__{%props.arrange%}InputYear").value=(new Date()).getFullYear();
+    document.querySelector("#__{%props.arrange%}InputMonth").value=(new Date()).getMonth();
+    document.querySelector("#__{%props.arrange%}InputDay").value=(new Date()).getDay();
 </defer>
+
+<style>
+    #__dateComponent {
+    margin:0.5vh;
+    padding: 2vh;
+    border: solid 1px gray;
+}
+</style>
