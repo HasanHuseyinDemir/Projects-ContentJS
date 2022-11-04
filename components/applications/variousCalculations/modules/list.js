@@ -9,6 +9,10 @@ __itemsList={
             title:"Yılın kaçıncı günü hesaplama",
             src:`${__thisFolder}/calculations/date/dayofyear.html`,
             
+        },
+        {
+            title:"Burç hesaplama",
+            src:`${__thisFolder}/calculations/date/astrology.html`,
         }
     ],
     height:[

@@ -50,6 +50,8 @@ __selectItem=(index)=>{
     __items[index].selected=true;
     __selected=__items[index].title+" Hesaplamaları";
     __selectedCategory=__items[index].detail;
+    __selectedTitle=__items[index].title;
+    document.title="Hesaplamalar - "+__selectedTitle;
     set();
 }
 __getItems=()=>{

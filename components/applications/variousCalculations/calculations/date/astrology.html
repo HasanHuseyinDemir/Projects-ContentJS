@@ -1,0 +1,58 @@
+<h2 align="center">Burç Hesaplama</h2>
+
+<div id="__dateAstrology" arrange="'first'" year_disabled="true">Doğum Tarihi</div>
+<br>
+<hr>
+<br>
+<div id="__resultAstrology"></div>
+<br>
+<div align="center">{{`<img id="__horoscopeIcon" src="${__getImage(__day)}">`}}</div>
+
+<defer>
+content.render("./components/applications/variousCalculations/calculations/date/components/DayMonthYear.html","#__dateAstrology","$$");
+content.render("./components/applications/variousCalculations/calculations/date/components/Result.html","#__resultAstrology","$$");
+__day="Tarih Belirtiniz";
+
+__getResult=()=>{
+    dayVal=__firstInputDay.value;
+    switch(__firstInputMonth.value){
+        case "1":dayVal<=19?__day="Oğlak":__day="Kova";break;
+        case "2":dayVal<=18?__day="Kova":__day="Balık";break;
+        case "3":dayVal<=20?__day="Balık":__day="Koç";break;
+        case "4":dayVal<=20?__day="Koç":__day="Boğa";break;
+        case "5":dayVal<=20?__day="Boğa":__day="İkizler";break;
+        case "6":dayVal<=20?__day="İkizler":__day="Yengeç";break;
+        case "7":dayVal<=21?__day="Yengeç":__day="Aslan";break;
+        case "8":dayVal<=21?__day="Aslan":__day="Başak";break;
+        case "9":dayVal<=21?__day="Başak":__day="Terazi";break;
+        case "10":dayVal<=21?__day="Terazi":__day="Akrep";break;
+        case "11":dayVal<=21?__day="Akrep":__day="Yay";break;
+        case "12":dayVal<=20?__day="Yay":__day="Oğlak";break;
+        default:__day="Geçersiz"
+    }
+    set();
+}
+__getImage=(horoscope)=>{
+    switch(horoscope){
+        case "Oğlak":return "https://cdn-icons-png.flaticon.com/512/3184/3184956.png"
+        case "Kova":return "https://cdn-icons-png.flaticon.com/512/3184/3184948.png"
+        case "Balık":return "https://cdn-icons-png.flaticon.com/512/1885/1885417.png"
+        case "Koç" :return "https://cdn-icons-png.flaticon.com/512/1885/1885453.png"
+        case "Boğa" :return "https://cdn-icons-png.flaticon.com/512/3184/3184963.png"
+        case "İkizler":return "https://cdn-icons-png.flaticon.com/512/1885/1885353.png"
+        case "Yengeç":return "https://cdn-icons-png.flaticon.com/512/1885/1885387.png"
+        case "Aslan":return "https://cdn-icons-png.flaticon.com/512/1885/1885431.png"
+        case "Başak":return "https://cdn-icons-png.flaticon.com/512/1885/1885340.png"
+        case "Terazi":return "https://cdn-icons-png.flaticon.com/512/1885/1885332.png"
+        case "Akrep":return "https://cdn-icons-png.flaticon.com/512/1885/1885402.png"
+        case "Yay":return "https://cdn-icons-png.flaticon.com/512/1885/1885468.png"
+    }
+}
+__getResult();
+</defer>
+<style>
+    #__horoscopeIcon{
+        width: 20%;
+        filter:drop-shadow(2px 2px 2px rgb(0,0,0));
+    }
+</style>

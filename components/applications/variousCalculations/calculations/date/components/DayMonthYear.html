@@ -17,7 +17,7 @@
     <option value="11">Kasım</option>
     <option value="12">Aralık</option>
 </select>
-<input oninput="__getResult()" min="0" id="__{%props.arrange%}InputYear" type="number">
+<input {%props.year_disabled?"disabled":""%} oninput="__getResult()" min="0" id="__{%props.arrange%}InputYear" type="number">
 </div>
 
 <defer>
