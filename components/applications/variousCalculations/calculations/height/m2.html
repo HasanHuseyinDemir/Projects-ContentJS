@@ -1,9 +1,19 @@
 <h2 align="center">Metrekare Hesaplama</h2>
 
-<div id="height" spec="'X'"/>
+<div id="__height" spec="'X'" arrange="'first'"/>
 <br>
-<div id="height" spec="'Y'"/>
+<div id="__height" spec="'Y'" arrange="'second'"/>
+
+<div id="__result"/>
 
 <defer>
-    content.render("./components/applications/variousCalculations/calculations/height/components/height1.html","#height","$$")
+    content.render("./components/applications/variousCalculations/calculations/height/components/height1.html","#__height","$$")
+    content.render("./components/applications/variousCalculations/calculations/height/components/Result.html","#__result","$$")
+    __result=0;
+    __getResult=()=>{
+        firstValue=(document.querySelector("#__firstNumber").value)*(document.querySelector("#__firstSelect").value)
+        secondValue=(document.querySelector("#__secondNumber").value)*(document.querySelector("#__secondSelect").value)
+        __result=(firstValue*secondValue).toFixed(2)+" M<sup>2</sup> ";
+        set();
+    }
 </defer>
