@@ -19,6 +19,14 @@ __items=[
         detail:"height",
     },
     {
+        title:"Enerji",
+        color:"red",
+        src:`${__thisFolder}/date/index.html`,
+        image:`${__thisFolder}/icons/energy.png`,
+        selected:false,
+        detail:"energy"
+    },
+    {
         title:"Matematik",
         color:"orange",
         src:`${__thisFolder}/math/index.html`,

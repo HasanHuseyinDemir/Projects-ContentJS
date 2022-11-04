@@ -18,12 +18,13 @@ __getResult=()=>{
     switch(__firstInputMonth.value){
         case "1":dayVal<=20?__day="Oğlak":__day="Kova";break;
         case "2":dayVal<=19?__day="Kova":__day="Balık";break;
-        case "3":dayVal<=19?__day="Balık":__day="Koç";break;
+        case "3":dayVal<=20?__day="Balık":__day="Koç";break;
         case "4":dayVal<=19?__day="Koç":__day="Boğa";break;
         case "5":dayVal<=19?__day="Boğa":__day="İkizler";break;
-        case "6":dayVal<=20?__day="İkizler":__day="Yengeç";break;
-        case "7":dayVal<=22?__day="Yengeç":__day="Aslan";break;
+        case "6":dayVal<=21?__day="İkizler":__day="Yengeç";break;
+        case "7":dayVal<=23?__day="Yengeç":__day="Aslan";break;
         case "8":dayVal<=23?__day="Aslan":__day="Başak";break;
+        //Buraya kadar doğru
         case "9":dayVal<=23?__day="Başak":__day="Terazi";break;
         case "10":dayVal<=23?__day="Terazi":__day="Akrep";break;
         case "11":dayVal<=22?__day="Akrep":__day="Yay";break;

@@ -1,7 +1,7 @@
 <div class="__height">
     <h3>{%props.spec?props.spec:"X"%} = </h3>
     <input  id="__{%props.arrange%}Number" oninput="__getResult()" type="number" min="0">
-        <select {%props.disable_select?"disabled":""%} id="__{%props.arrange%}Select" onchange="__getResult()">
+        <select style="{%props.disable_select?'display:none':''%}" id="__{%props.arrange%}Select" onchange="__getResult()">
             <option style="color:rgb(0, 14, 0)"value="1000">Kilometre (km)</option>
             <option style="color:rgb(1, 53, 1)"value="100">Hektometre (hm)</option>
             <option style="color:rgb(0, 95, 0)"value="10">Dekametre (dam)</option>

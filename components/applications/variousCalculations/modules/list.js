@@ -27,16 +27,11 @@ __itemsList={
             
         },  
         {
-            title:"Uzunluk Birimi Hesaplama",
-            src:`${__thisFolder}/calculations/height/dayofyear.html`,
+            title:"Boy/Kilo Oranı Hesaplama (BMI)",
+            src:`${__thisFolder}/calculations/height/bmi.html`,
             
         },
         {
-            title:"Kalori Hesaplama",
-            src:`${__thisFolder}/calculations/height/dayofyear.html`,
-            
-        },
-      {
             title:"Alan Hesaplama",
             src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
@@ -47,15 +42,11 @@ __itemsList={
             
         },
         {
-            title:"Taban Hesaplama",
+            title:"Uzaklık Hesaplama",
             src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
         },
-        {
-            title:"Binary Hesaplama",
-            src:`${__thisFolder}/calculations/height/dayofyear.html`,
-            
-        }
+
     ],
     math:[
         {
@@ -92,7 +83,18 @@ __itemsList={
             title:"Karekök Hesaplama",
             src:`${__thisFolder}/calculations/height/dayofyear.html`,
             
-        }
+        },
+        {
+            title:"Binary Hesaplama",
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
+            
+        },
+        {
+            title:"Taban Hesaplama",
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
+            
+        },
+
     ],
     finance:[
         {
@@ -136,7 +138,44 @@ __itemsList={
             title:"Kelime Bul ve Değiştir",
             src:`${__thisFolder}/calculations/string/dayofyear.html`,
             
+        },
+        {
+            title:"Tersten Yazıcı",
+            src:`${__thisFolder}/calculations/string/dayofyear.html`,
+            
+        },
+        {
+            title:"Büyük/Küçük Harf Düzenleyici",
+            src:`${__thisFolder}/calculations/string/dayofyear.html`,
+            
         }
+    ],
+    energy:[
+        {
+            title:"Kalori Hesaplama",
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
+            
+        },        
+        {
+            title:"Sıcaklık Hesaplama",
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
+            
+        },
+        {
+            title:"Watt Hesaplama",
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
+            
+        },        
+        {
+            title:"Yakıt Tüketimi Hesaplama",
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
+            
+        },
+        {
+            title:"Elektrik Tüketimi Hesaplama",
+            src:`${__thisFolder}/calculations/height/dayofyear.html`,
+            
+        },
     ],
     colors:(category)=>{
         switch(category){
@@ -145,6 +184,7 @@ __itemsList={
             case "math":return "bgorange"
             case "finance":return "bggold"
             case "string":return "bgyellowgreen"
+            case "energy":return "bgred"
         }
     },
     render:(src)=>{
