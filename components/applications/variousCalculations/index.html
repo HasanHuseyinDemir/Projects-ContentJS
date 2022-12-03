@@ -6,7 +6,9 @@
 </div>
 
 <defer>
+__thisFolder="./components/applications/variousCalculations";
 load.script("./components/applications/variousCalculations/modules/items.js","$$");
+load.script(`${__thisFolder}/modules/list.js`,"$$");
 </defer>
 
 {%load.styles(["items.css","form.css"],"./components/applications/variousCalculations/styles/","$$","page"),""%}

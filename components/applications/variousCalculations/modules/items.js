@@ -1,4 +1,4 @@
-__thisFolder="./components/applications/variousCalculations";
+
 __selected="Hesaplamalar";
 __selectedCategory="height";
 __items=[
@@ -76,4 +76,3 @@ __getItems=()=>{
     return items
 }
 
-load.script(`${__thisFolder}/modules/list.js`,"$$");

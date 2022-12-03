@@ -1,4 +1,4 @@
-<div class="__height">
+<div class="__heights">
     <h3>{%props.spec?props.spec:"X"%} = </h3>
     <input  id="__{%props.arrange%}Number" oninput="__getResult()" type="number" min="0">
         <select style="{%props.disable_select?'display:none':''%}" id="__{%props.arrange%}Select" onchange="__getResult()">
@@ -13,7 +13,7 @@
 </div>
 
 <style>
-    .__height {
+    .__heights {
     display: flex;
     justify-content: center;
     border:solid 1px gray;
